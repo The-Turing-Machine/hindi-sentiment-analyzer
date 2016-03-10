@@ -15,7 +15,7 @@ def Faceook_Data_Extract():
 
 	link = "https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=" + app_id +"&client_secret=" + client_secret + "&fb_exchange_token=" + access_token   #The link from where the long lived token will be generated
 
-	#Generaing the long lived token
+	#Generating the long lived token
 	try:
 		s = requests.Session()
 		token = s.get(link).content
