@@ -25,6 +25,13 @@
     <script>
       var map;
       function initMap() {
+       /*  var myLatLng = [{lat: 40.7127837, lng: -74.0059413},{lat: 30.7127837, lng: -74.0059413}];*/
+
+         var locations = [
+
+         {latlng:new google.maps.LatLng(40.7127837,-74.0059413)},
+          {latlng:new google.maps.LatLng(30.7127837,-74.0059413)}
+         ];
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat:0, lng:0},
           zoom: 2,
@@ -37,10 +44,26 @@
       scrollwheel: false,
       navigationControl: false,
       streetViewControl: false
+
         });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwOY1yCJGwurtaNjeC_rvYu7O_WcsuqUE&callback=initMap"
+        
+    for (var i = 0; i < locations.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: locations[i].latlng,map:map,
+        map: map,
+     
+      });
+    }
+  }
+
+   
+
+   </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9Q52N2J-zQEZD1woX6-4PAaH-nP6gPPo&callback=initMap"
     async defer></script>
   </body>
 </html>
+
+<!-- 
+lat" : 31.468445,
+               "lng" : 76.2707745 -->
